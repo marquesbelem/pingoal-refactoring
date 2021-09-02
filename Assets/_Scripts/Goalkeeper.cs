@@ -14,13 +14,15 @@ public class Goalkeeper : MonoBehaviour
     private Transform _targetLeft;
     [SerializeField]
     private float _speed = 10;
+    [SerializeField]
+    private float _impulse = 100;
 
     private SpriteRenderer _skin;
-    private GameObject _ball;
+    private Ball _ball;
     private Rigidbody2D _rigidbody2D;
 
-    private bool goToLeft = true;
-    private bool goToRight;
+    private bool _goToLeft = true;
+    private bool _goToRight;
 
     public GoalkeeperData Data
     {
@@ -43,7 +45,7 @@ public class Goalkeeper : MonoBehaviour
     private void Start()
     {
         _skin = GetComponent<SpriteRenderer>();
-        _ball = GameObject.FindGameObjectWithTag(TAG_BALL);
+        _ball = GameObject.FindGameObjectWithTag(TAG_BALL).GetComponent<Ball>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
 
         Setup();
@@ -57,17 +59,14 @@ public class Goalkeeper : MonoBehaviour
 
     private void MoveByBall()
     {
-        Vector2 direction = Vector2.zero;
-        direction = _ball.transform.position - transform.position;
-
-        _rigidbody2D.AddRelativeForce(direction.normalized * _speed, ForceMode2D.Force);
+        _rigidbody2D.AddForce(new Vector2(_ball.transform.position.x, transform.position.y) * _speed);
     }
 
     private void MoveByTarget()
     {
         Vector2 direction = Vector2.zero;
 
-        if (goToLeft)
+        if (_goToLeft)
         {
             if (Vector3.Distance(transform.position, _targetLeft.position) > 1f)
             {
@@ -75,12 +74,12 @@ public class Goalkeeper : MonoBehaviour
             }
             else
             {
-                goToLeft = false;
-                goToRight = true;
+                _goToLeft = false;
+                _goToRight = true;
             }
         }
 
-        if (goToRight)
+        if (_goToRight)
         {
             if (Vector3.Distance(transform.position, _targetRight.position) > 1f)
             {
@@ -88,11 +87,41 @@ public class Goalkeeper : MonoBehaviour
             }
             else
             {
-                goToRight = false;
-                goToLeft = true;
+                _goToRight = false;
+                _goToLeft = true;
             }
         }
 
         _rigidbody2D.AddRelativeForce(direction.normalized * _speed, ForceMode2D.Force);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag(TAG_BALL))
+        {
+            ImpulseBall();
+        }
+    }
+
+    private void ImpulseBall()
+    {
+        switch (_data.Power)
+        {
+            case GoalkeeperType.Classic:
+                _ball.Move(_impulse);
+                break;
+            case GoalkeeperType.Attack:
+                _ball.MoveToGoal(_impulse);
+                break;
+            case GoalkeeperType.Left:
+                _ball.MoveToLeft(_impulse);
+                break;
+            case GoalkeeperType.Right:
+                _ball.MoveToRight(_impulse);
+                break;
+            default:
+                _ball.Move(_impulse);
+                break;
+        }
     }
 }

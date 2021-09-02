@@ -2,5 +2,7 @@
 {
     Classic,
     Attack,
-    Scale
+    Scale,
+    Right,
+    Left
 }

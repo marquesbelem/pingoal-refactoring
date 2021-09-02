@@ -371,7 +371,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: a66a6708868cf1744923a13253462d8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -473,6 +473,7 @@ GameObject:
   - component: {fileID: 794446555}
   - component: {fileID: 794446554}
   - component: {fileID: 794446553}
+  - component: {fileID: 794446557}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -556,7 +557,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 1a07c09f85d5a954d807ddc8ad2e0834, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -582,6 +583,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &794446557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794446552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa0c8588a923af4fb100b2faa576338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &933473756
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,7 +961,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: a66a6708868cf1744923a13253462d8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1353,6 +1366,7 @@ MonoBehaviour:
   _targetRight: {fileID: 553257835}
   _targetLeft: {fileID: 342362178}
   _speed: 3
+  _impulse: 100
 --- !u!1 &1835087997
 GameObject:
   m_ObjectHideFlags: 0
