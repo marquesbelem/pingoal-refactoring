@@ -11,6 +11,6 @@ public class ArenaData : ScriptableObject
 
     public string ID
     {
-        get => string.Format("{1}", _id).ToUpper();
+        get => string.Format("{0}", _id).ToUpper();
     }
 }
