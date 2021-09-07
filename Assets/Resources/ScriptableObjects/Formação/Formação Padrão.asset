@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56241bb3445f97640a63b8ac51ae076c, type: 3}
   m_Name: "Forma\xE7\xE3o Padr\xE3o"
   m_EditorClassIdentifier: 
-  ArenaData: {fileID: 11400000, guid: 0dcf60136c63f544aabb5fe12366744f, type: 2}
-  PalletDataL: {fileID: 11400000, guid: d76d677af6ef4b344b62a78b5218c5cc, type: 2}
-  PalletDataR: {fileID: 11400000, guid: d76d677af6ef4b344b62a78b5218c5cc, type: 2}
-  GoalkeeperData: {fileID: 11400000, guid: 4325555285d88054fa6a15b000ca7bcd, type: 2}
+  _ArenaData: {fileID: 11400000, guid: 0dcf60136c63f544aabb5fe12366744f, type: 2}
+  _PalletLData: {fileID: 11400000, guid: d76d677af6ef4b344b62a78b5218c5cc, type: 2}
+  _PalletRData: {fileID: 11400000, guid: d76d677af6ef4b344b62a78b5218c5cc, type: 2}
+  _GoalkeeperData: {fileID: 11400000, guid: 4325555285d88054fa6a15b000ca7bcd, type: 2}

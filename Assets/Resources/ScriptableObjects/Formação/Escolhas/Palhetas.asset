@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc4dd694b49c8f408e2e9a38ce1cd5f, type: 3}
+  m_Name: Palhetas
+  m_EditorClassIdentifier: 
+  Pallets:
+  - {fileID: 11400000, guid: d76d677af6ef4b344b62a78b5218c5cc, type: 2}
