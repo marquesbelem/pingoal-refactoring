@@ -12,6 +12,8 @@ public class Pallet : MonoBehaviour
 	private Rigidbody2D _rigidbody2D;
 	private PalletSetupByData _setup; 
 
+	public PalletSide Side { get => _side; }
+	
 	public void Move()
 	{
 		_rigidbody2D.AddForce(transform.up * _impulse, ForceMode2D.Impulse);
@@ -20,23 +22,5 @@ public class Pallet : MonoBehaviour
 	private void Start()
 	{
 		_rigidbody2D = GetComponent<Rigidbody2D>();
-	}
-
-	private void Update()
-	{
-		if(_side == PalletSide.Left)
-		{
-			if (Input.GetKeyDown(KeyCode.A))
-			{
-				Move();
-			}
-		}
-		else
-		{
-			if (Input.GetKeyDown(KeyCode.D))
-			{
-				Move();
-			}
-		}
 	}
 }

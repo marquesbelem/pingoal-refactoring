@@ -4,7 +4,6 @@
 [RequireComponent(typeof(GoalkeeperSetupByData))]
 public class Goalkeeper : MonoBehaviour
 {
-	private const string TAG_BALL = "Ball";
 
 	[SerializeField]
 	private Transform _targetRight;
@@ -25,8 +24,9 @@ public class Goalkeeper : MonoBehaviour
 
 	private void Start()
 	{
-		_ball = GameObject.FindGameObjectWithTag(TAG_BALL).GetComponent<Ball>();
+		_ball = GameObject.FindGameObjectWithTag(TagsHelper.TAG_BALL).GetComponent<Ball>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
+		_setup = GetComponent<GoalkeeperSetupByData>();
 	}
 
 	private void FixedUpdate()
@@ -75,7 +75,7 @@ public class Goalkeeper : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.CompareTag(TAG_BALL))
+		if (collision.gameObject.CompareTag(TagsHelper.TAG_BALL))
 		{
 			ImpulseBall();
 		}
