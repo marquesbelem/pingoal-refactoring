@@ -3,8 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class FormationController : MonoBehaviour
 {
-	private const string SCENE_EQUIPMENTS = "Game";
-	
 	public static FormationController Instance;
 	public FormationData Data;
 
@@ -44,6 +42,6 @@ public class FormationController : MonoBehaviour
 
 	public void Close()
 	{
-		SceneManager.LoadScene(SCENE_EQUIPMENTS);
+		SceneManagerHelper.Instance.LoadSceneMenu();
 	}
 }
