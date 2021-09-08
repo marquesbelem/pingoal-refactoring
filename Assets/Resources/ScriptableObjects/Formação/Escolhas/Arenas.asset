@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a74ce7bf16c7594da20f12f87481fd9, type: 3}
   m_Name: Arenas
   m_EditorClassIdentifier: 
-  Arenas: []
+  Arenas:
+  - {fileID: 11400000, guid: 74b289335339b1e43b13032518c6379f, type: 2}
+  - {fileID: 11400000, guid: 234af4d232ed60548b159f8265977a4a, type: 2}
+  - {fileID: 11400000, guid: 0dcf60136c63f544aabb5fe12366744f, type: 2}

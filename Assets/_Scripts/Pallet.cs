@@ -21,4 +21,22 @@ public class Pallet : MonoBehaviour
 	{
 		_rigidbody2D = GetComponent<Rigidbody2D>();
 	}
+
+	private void Update()
+	{
+		if(_side == PalletSide.Left)
+		{
+			if (Input.GetKeyDown(KeyCode.A))
+			{
+				Move();
+			}
+		}
+		else
+		{
+			if (Input.GetKeyDown(KeyCode.D))
+			{
+				Move();
+			}
+		}
+	}
 }
