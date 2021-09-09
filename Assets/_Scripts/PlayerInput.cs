@@ -16,14 +16,14 @@ public class PlayerInput : MonoBehaviour
 
 		if (_pallet.Side == PalletSide.Left)
 		{
-			if (Input.GetKeyDown(KeyCode.A))
+			if (Input.GetKey(KeyCode.A))
 			{
 				_pallet.Move();
 			}
 		}
 		else
 		{
-			if (Input.GetKeyDown(KeyCode.D))
+			if (Input.GetKey(KeyCode.D))
 			{
 				_pallet.Move();
 			}
